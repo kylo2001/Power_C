@@ -5,6 +5,7 @@
 		"bitset": "c",
 		"chrono": "c",
 		"unordered_map": "c",
-		"__locale": "c"
+		"__locale": "c",
+		"stdio.h": "c"
 	}
 }
