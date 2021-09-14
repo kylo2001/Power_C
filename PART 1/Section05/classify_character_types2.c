@@ -1,5 +1,5 @@
 /*
-    [문제 16-1]
+    [문제 16-2]
     일단 문자열을 입력 받자. 그리고 입력 받은 문자열 중에서 알파벳 대문자는 소문자로,
     소문자는 대문자로 각각 변경하여 출력하는 프로그램을 작성하자.
     단, 알파벳 이외의 문자가 존재하면 특별한 변경 없이 출력하는 것으로 한다.
@@ -18,29 +18,31 @@
 */
 
 #include <stdio.h>
-#include <string.h>
-#define STR_LEN 256
 
 int main(void)
 {
-    char str[STR_LEN]; // 첫 번째 방법(배열 사용)
-
+    char ch;
     fputs("문자열 입력 : ", stdout);
-    fgets(str, STR_LEN, stdin);
 
-    for (int i = 0; i < strlen(str) - 1; i++)
+    while (1)
     {
-        if (str[i] >= 'a' && str[i] <= 'z')
-        {
-            str[i] -= 'a' - 'A';
-        }
-        else if (str[i] >= 'A' && str[i] <= 'Z')
-        {
-            str[i] += 'a' - 'A';
-        }
-    }
+        ch = getchar();
 
-    printf("%s", str);
+        if (ch == '\n')
+        {
+            break;
+        }
+        else if (ch >= 'a' && ch <= 'z')
+        {
+            ch -= 'a' - 'A';
+        }
+        else if (ch >= 'A' && ch <= 'Z')
+        {
+            ch += 'a' - 'A';
+        }
+
+        printf("%c", ch);
+    }
 
     return 0;
 }
