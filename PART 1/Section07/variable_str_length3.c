@@ -67,9 +67,12 @@ void SortString(char *strArr[STR_NUM])
     {
         for (j = 0; j < (STR_NUM - i) - 1; j++)
         {
-            tempStr = strArr[j];
-            strArr[j] = strArr[j + 1];
-            strArr[j + 1] = tempStr;
+            if (strlen(strArr[j]) > strlen(strArr[j + 1]))
+            {
+                tempStr = strArr[j];
+                strArr[j] = strArr[j + 1];
+                strArr[j + 1] = tempStr;
+            }
         }
     }
 }
